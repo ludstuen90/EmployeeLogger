@@ -27,15 +27,17 @@ displayEmployees();
 
 
 var displayEmployees = function() {
-document.getElementById("draw").innerHTML = '';
+document.getElementById("draw").innerHTML = '<table style="width:100%"><tr><td>Jill</td><td>Smith</td><td>Over9,000</td></tr></table>';
 
-for (var i = 0; i < employees.length; i++) {
-  var zfname = "First Name: " + employees[i]["First Name"];
-  var zlname = "Last Name: " + employees[i]["Last Name"];
-  var zempl = "EMPL ID: " + employees[i]["Employee ID"];
-  var zsal= "Salary: " + employees[i]["Salary"];
-  document.getElementById("draw").innerHTML += (zfname + zlname + zempl + zsal);
-}
+
+
+// for (var i = 0; i < employees.length; i++) {
+//   var zfname = "First Name: " + employees[i]["First Name"];
+//   var zlname = "Last Name: " + employees[i]["Last Name"];
+//   var zempl = "EMPL ID: " + employees[i]["Employee ID"];
+//   var zsal= "Salary: " + employees[i]["Salary"];
+//   document.getElementById("draw").innerHTML += (zfname + zlname + zempl + zsal);
+// }
 
 };
 
