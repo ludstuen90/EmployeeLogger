@@ -1,0 +1,27 @@
+body {
+  font-family: ‘Palatino Linotype’, ‘Book Antiqua’, Palatino, serif;
+  background-color:white;
+
+}
+
+h1 {
+  text-align:center;
+}
+
+
+
+
+#inputs {
+  margin-left:7%;
+  font-weight:bold;
+}
+
+#inputbtn {
+  margin-left:10%;
+
+}
+
+#draw {
+  background-color:#e9e9e9;
+
+}

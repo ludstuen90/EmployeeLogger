@@ -3,20 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Employee Salary Calculator</title>
+    <link rel="stylesheet" type="text/css" href="sheetrock.css"></link>
+    </style>
   </head>
   <body>
 <h1>Employee Salary Database</h1>
 
-<p>This application is available to record an employee's full name, ID number, and salary. Enter information
+<p id="instructions">This application is available to record an employee's full name, ID number and salary. Enter information
   below to get started with your database!</p>
 
 
-<p>First Name:  <input type="text" id="fName" placeholder="First Name"></input></p>
-<p>Last Name: <input type="text" id="lName" placeholder="Last Name"></input</p>
-<p>Employee ID Number: <input type="number" id= "emplId" placeholder="EMPL ID"></input></p>
-<p>Salary (Rounded to nearest dollar): <input type="number" id="salary" placeholder="Yearly Salary"></input></p>
+<p id="inputs">First Name:  <input type="text" id="fName" placeholder="First Name"></input></p>
+<p id="inputs">Last Name: <input type="text" id="lName" placeholder="Last Name"></input</p>
+<p id="inputs">Employee ID Number: <input type="number" id= "emplId" placeholder="EMPL ID"></input></p>
+<p id="inputs">Salary (Rounded to nearest dollar): <input type="number" id="salary" placeholder="Yearly Salary"></input></p>
 
-<button onclick="addEmpl()">Add Employee</button>
+<button id="inputbtn" onclick="addEmpl()">Add Employee</button>
 <br><div id="deleteEmployee"></div><br><br>
 <div id="draw"></div>
 <div id="bank"></div>
