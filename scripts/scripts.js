@@ -1,7 +1,7 @@
 var employees = [];
 
 var deleteEmpl = function(fired) {
-  if (confirm("Are you sure you want to remove Employee " + employees[fired]["First Name"] + " "+  employees[fired]["Last Name"] + "?")) {
+  if (confirm("Are you sure you want to fire " + employees[fired]["First Name"] + " "+  employees[fired]["Last Name"] + "?")) {
     employees.splice(fired, 1);
   }
   displayEmployees();
@@ -41,13 +41,15 @@ for (var i = 0; i < employees.length; i++) {
   var zfname =  employees[i]["First Name"];
   var zlname = employees[i]["Last Name"];
   var zempl = employees[i]["Employee ID"];
-  var zsal= employees[i]["Salary"];
+  var zsal= parseInt(employees[i]["Salary"]);
   var rmButton = '<button onclick="deleteEmpl(' + i + ')">Delete Employee</button>';
 
-  htmloutput +=  '<tr><td>' + zfname +  '</td> <td>'+ zlname +'</td> <td>' + zempl +'</td> <td>'+ zsal + '</td><td>' + rmButton+ '</td> </tr>';
+  htmloutput +=  '<tr><td>' + zfname +  '</td> <td>'+ zlname +'</td> <td>' + zempl +'</td> <td>'+ zsal.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) + '</td><td>' + rmButton+ '</td> </tr>';
   if (zsal === undefined){}
   else {
     totalSalary += parseFloat(zsal);
+    totalSalary = parseInt(totalSalary);
+
   }
 }
 
@@ -55,7 +57,7 @@ for (var i = 0; i < employees.length; i++) {
 
 htmloutput += '</table>';
 document.getElementById("draw").innerHTML = htmloutput;
-document.getElementById("bank").innerHTML = '<table style="width:100%"><tr><td><b><p>Total Salary Expense: </b>' + totalSalary + '</p></td></tr></table>';
+document.getElementById("bank").innerHTML = '<table style="width:100%"><tr><td><b><p>Total Salary Expense: </b>' + totalSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) + '</p></td></tr></table>';
 
 };
 
