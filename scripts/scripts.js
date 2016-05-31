@@ -36,6 +36,7 @@ document.getElementById("emplId").value=null;
 var displayEmployees = function() {
   var htmloutput = '<table style="width:100%"><tr><td><b>First Name:</td><td><b>Last Name:</b></td><td><b>Employee ID:</b></td><td><b>Salary:</b></td><td><b>Delete Employee:</b></td></tr>';
 var totalSalary = 0;
+var totalMonSalary= 0;
 
 for (var i = 0; i < employees.length; i++) {
   var zfname =  employees[i]["First Name"];
@@ -49,6 +50,7 @@ for (var i = 0; i < employees.length; i++) {
   else {
     totalSalary += parseFloat(zsal);
     totalSalary = parseInt(totalSalary);
+    totalMonSalary = (totalSalary/12);
 
   }
 }
@@ -57,7 +59,10 @@ for (var i = 0; i < employees.length; i++) {
 
 htmloutput += '</table>';
 document.getElementById("draw").innerHTML = htmloutput;
-document.getElementById("bank").innerHTML = '<table style="width:100%"><tr><td><b><p>Total Salary Expense: </b>' + totalSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) + '</p></td></tr></table>';
+document.getElementById("bank").innerHTML = '<br><br>';
+
+document.getElementById("bank").innerHTML += '<table style="width:100%"><tr><td><b><p>Total Monthly Salary Expense: </b>' + totalMonSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) + '</p></td></tr><tr><td><b><p>Total Annual Salary Expense: </b>' + totalSalary.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 }) + '</p></td></tr></table>';
+
 
 };
 
